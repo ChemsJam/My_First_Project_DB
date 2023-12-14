@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ADD8E6;">
+    <div class="container-fluid">
+       
+        <span class="navbar-brand">
+            Playita San Marcos
+        </span>
+        <button class="btn btn-outline-danger ml-auto"(click)="regresar()">regresar</button>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col ">
+            <div class="card mt-3 mb-3 casi-transparente">
+                <div class="card-header">Agregar comida</div>
+                <div class="card-body ">
+                    <select name="" id="" class="form-select" [(ngModel)]="newC.categoria">
+                        <option value="General ">comida</option>
+                        <option value="Programacion">bebida</option>
+                    </select>
+                    <input type="text" class="form-control mt-1" [(ngModel)]="newC.nombre">
+                    <input type="text" class="form-control mt-1" [(ngModel)]="newC.descripcion">
+                    <input type="text" class="form-control mt-1" [(ngModel)]="newC.precio">
+                    <button class="btn btn-outline-warning float-end mt-3" (click)="crearComida()">
+                        <i class="bi bi-cloud-upload"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table casi-transparente">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>descripción</th>
+                        <th>Precio</th>
+                        <th>Categoria</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let c of comidas">
+                        <td>{{c.no}}</td>
+                        <td>{{c.nombre}}</td>
+                        <td>{{c.descripcion}}</td>
+                        <td>{{c.precio}}</td>
+                        <td>{{c.categoria}}</td>
+                        <td class="text-end">
+                            <button class="btn btn-outline-primary"><i class="bi bi-eye-slash-fill"></i></button>
+                            &nbsp;
+                            <button class="btn btn-outline-success" (click)="editarComida(c)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></button>
+                            &nbsp;  
+                            <button class="btn btn-outline-danger" (click)="eliminarComida(c.id)"><i class="bi bi-trash3"></i></button>
+                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modificar comida</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <input type="text" class="form-control mt-1" [(ngModel)]="mod.nombre">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dange" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="modificarComida">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

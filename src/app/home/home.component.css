@@ -1,0 +1,24 @@
+.container{
+    background-image: url("../../assets/LaPlayita.jpg");
+    background-size:auto; /* La imagen se ajusta para cubrir toda la pantalla */
+    background-position: center; /* La imagen se centra en la pantalla */
+    background-repeat: no-repeat; /* La imagen no se repite */
+}
+/* Estilo para hacer casi transparente la tabla */
+.casi-transparente {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo con transparencia (aquí el último valor 0.2 es el nivel de opacidad, puedes ajustarlo según lo desees) */
+  }
+  
+  /* Estilo para hacer casi transparentes las celdas */
+  .casi-transparente th,
+  .casi-transparente td {
+    opacity: 0.6; /* Opacidad para los elementos de la tabla */
+  }
+
+  .full-screen-div {
+    height: 100vh; /* El div ocupará el 100% de la altura de la ventana */
+    width: 100vw; /* El div ocupará el 100% del ancho de la ventana */
+    /* Otros estilos opcionales */
+    background-color: #f2f2f2; /* Color de fondo opcional */
+    /* ... */
+  }

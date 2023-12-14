@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ADD8E6;">
+    <div class="container-fluid">
+       
+        <span class="navbar-brand">
+            Playita San Marcos
+        </span>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <div class="card mt-3 casi-transparente">
+                <div class="card-header">Registro de Usuario</div>
+                <div class="card-body">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-envelope-at-fill"></i>
+                        </span>
+                        <input type="email" class="form-control" placeholder="Correo" [(ngModel)]="email"> <!-- Enlazando input -->
+                    </div>
+                    <div class="input-group mt-3">
+                        <span class="input-group-text">
+                            <i class="bi bi-key"></i>
+                        </span>
+                        <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="pass">
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="showError">
+                       Vuelve a intentarlo
+                      </div>                      
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-light float-end" (click)="registro()" [disabled]="showLoading">
+                        <div class="spinner-border spinner-border-sm" *ngIf="showLoading"></div>
+                        Entrar
+                        </button>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
